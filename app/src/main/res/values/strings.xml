@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Stopwatch</string>
+    <string name="new_task_message">START NEW TASK</string>
+    <string name="resume_task_message">RESUME EXISTING TASK</string>
+    <string name="start">START</string>
+    <string name="pause">PAUSE</string>
+    <string name="stop">DONE!</string>
+    <string name="reset">RESET</string>
+    <string name="resume">RESUME</string>
+    <string name="send">SEND</string>
+    <string name="discard">DISCARD</string>
+    <string name="store_to_database">DONE!</string>
+    <string name="back">SWITCH ACTIVITY</string>
+    <string name="check">✔</string>
+    <string name="do_it">DO</string>
+    <string name="get_visual">VISUAL</string>
+    <string name="future_task_message">ADD TO-DO TASK</string>
+    <string name="do_future_task_message">DO TO-DO TASK</string>
+    <string name="add">ADD</string>
+    <string name="next">NEXT</string>
+    <string name="task_type">SELECT TASK TYPE</string>
+    <string name="title_activity_info_gathering">InfoGatheringActivity</string>
+    <string name="title_activity_stopwatch_visual">StopwatchVisualActivity</string>
+    <string name="title_activity_future_task">FutureTaskActivity</string>
+    <string name="title_activity_more_info_gathering">MoreInfoGatheringActivity</string>
+    <string name="settings">SETTINGS</string>
+    <string name="new_quarter">ADD NEW QUARTER</string>
+    <string name="new_course">ADD NEW COURSE</string>
+    <string name="new_syllabus_category">ADD NEW SYLLABUS CATEGORY</string>
+    <string name="catalog_name">catalog name</string>
+    <string name="full_course_name">full name</string>
+    <string name="syllabus_category_name">category name</string>
+    <string name="start_date">start date</string>
+    <string name="end_date">end date</string>
+    <string name="add_category">ADD CATEGORY</string>
+    <string name="add_quarter">ADD QUARTER</string>
+    <string name="add_course">ADD COURSE</string>
+    <string name="done">DONE</string>
+
+    <string-array name="courses">
+        <item>
+            <string name="defaultCourse">select course</string>
+        </item>
+        <item>
+            <string name="CSE 414">CSE 414</string>
+        </item>
+        <item>
+            <string name="CSE 415">CSE 415</string>
+        </item>
+        <item>
+            <string name="POL S 202">POL S 202</string>
+        </item>
+    </string-array>
+
+    <string-array name="taskTypes">
+        <item>
+            <string name="defaultTaskType">select task type</string>
+        </item>
+        <item>
+            <string name="chore">chore</string>
+        </item>
+        <item>
+            <string name="exam">exam</string>
+        </item>
+        <item>
+            <string name="assignment">assignment</string>
+        </item>
+        <item>
+            <string name="learn">learn</string>
+        </item>
+        <item>
+            <string name="appointment">appointment</string>
+        </item>
+    </string-array>
+
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string-array name="syllabusCategoryTypes">
+        <item>
+            <string name="defaultCategoryType">select task type</string>
+        </item>
+        <item>
+            <string name="formal_exam">formal exam</string>
+        </item>
+        <item>
+            <string name="informal_exam">informal exam</string>
+        </item>
+        <item>
+            <string name="assignment_2">assignment</string>
+        </item>
+        <item>
+            <string name="participation">participation</string>
+        </item>
+        <item>
+            <string name="lab">lab</string>
+        </item>
+    </string-array>
+</resources>

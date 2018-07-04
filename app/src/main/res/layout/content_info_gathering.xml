@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".InfoGatheringActivity">
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/new_task_message"
+        android:layout_alignTop="@+id/message"
+        android:onClick="onClickStart"
+        android:text="@string/start"/>
+
+    <Button
+        android:id="@+id/resume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/resumeTasksSpinner"
+        android:onClick="onClickResume"
+        android:enabled="true"
+        android:text="@string/resume"/>
+
+    <Button
+        android:id="@+id/Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/message_future"
+        android:onClick="onClickAdd"
+        android:enabled="true"
+        android:text="@string/add"/>
+
+    <Button
+        android:id="@+id/Do"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/futureTasksSpinner"
+        android:onClick="onClickDo"
+        android:enabled="true"
+        android:text="@string/do_it"/>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/new_task_message"
+        android:ems="10"/>
+
+    <EditText
+        android:id="@+id/message_future"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/future_task_message"
+        android:ems="10"/>
+
+
+    <Spinner
+        android:id="@+id/resumeTasksSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resume_task_message"
+        android:layout_marginTop="5dp"/>
+
+    <Spinner
+        android:id="@+id/futureTasksSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/do_future_task_message"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/new_task_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/new_task_message"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/resume_task_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@id/message"
+        android:layout_marginTop="60dp"
+        android:text="@string/resume_task_message"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/future_task_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@id/resumeTasksSpinner"
+        android:layout_marginTop="60dp"
+        android:text="@string/future_task_message"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/do_future_task_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@id/message_future"
+        android:layout_marginTop="60dp"
+        android:text="@string/do_future_task_message"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:layout_below="@+id/futureTasksSpinner"
+        android:layout_alignEnd="@+id/message_future"
+        android:layout_marginTop="11dp"
+        android:onClick="onClickSettings"/>
+
+
+</RelativeLayout>

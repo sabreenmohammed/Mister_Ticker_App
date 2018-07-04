@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    tools:context=".StopwatchActivity">
+
+    <TextView
+        android:id="@+id/time_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="92sp"/>
+
+    <Button
+        android:id="@+id/get_visual_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="70dp"
+        android:onClick="onClickGetVisual"
+        android:text="@string/get_visual"/>
+
+    <Button
+        android:id="@+id/resume_pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/time_view"
+        android:layout_marginTop="100dp"
+        android:onClick="onClickResumePause"
+        android:text=""
+        android:visibility="visible"/>
+
+    <Button
+    android:id="@+id/stop_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/resume_pause_button"
+    android:layout_marginTop="10dp"
+    android:onClick="onClickDone"
+    android:text="@string/store_to_database"
+    android:textSize="25dp"
+    android:visibility="visible"/>
+
+
+    <Button
+    android:id="@+id/reset_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:onClick="onClickDiscard"
+    android:text="@string/discard" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="onClickBack"
+        android:text="@string/back"/>
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentTop="true"
+        android:onClick="onClickCheckButton"
+        android:text="@string/check"
+        android:visibility="invisible"
+        android:textSize="7dp"/>
+
+
+    <TextView
+        android:id="@+id/task_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:onClick="onClickTaskName"
+        android:visibility="visible"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp"/>
+
+    <EditText
+        android:id="@+id/task_name_editor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:visibility="invisible"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:visibility="invisible"/>
+
+
+
+
+</RelativeLayout>

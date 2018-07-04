@@ -1,0 +1,183 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="30dp"
+    tools:context=".MoreInfoGatheringActivity">
+
+
+
+    <Button
+        android:id="@+id/add_more_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClickAddMoreInfo"
+        android:enabled="true"
+        android:text="@string/add"/>
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/add_more_info"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClickNext"
+        android:enabled="true"
+        android:text="@string/next"/>
+
+
+    <Spinner
+        android:id="@+id/task_type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task_type_message"
+        android:layout_marginTop="5dp"
+        android:entries="@array/taskTypes"/>
+
+
+    <TextView
+        android:id="@+id/task_type_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task_type"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"/>
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_below="@+id/task_type_spinner"
+        android:id="@+id/Info">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/SchoolInfo">
+
+            <TextView
+                android:id="@+id/quarter_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUARTER: "
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="60dp"/>
+
+            <Spinner
+                android:id="@+id/quarter_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/quarter_label"
+                android:layout_alignTop="@+id/quarter_label"/>
+
+            <Spinner
+                android:id="@+id/course_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/course_label"
+                android:layout_toRightOf="@id/course_label" />
+
+            <TextView
+                android:id="@+id/course_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COURSE: "
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/quarter_label"
+                android:layout_marginTop="40dp"/>
+
+            <Spinner
+                android:id="@+id/category_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/category_label"
+                android:layout_alignTop="@+id/category_label"/>
+
+            <TextView
+                android:id="@+id/category_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYLLABUS CATEGORY: "
+                android:textSize="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/course_label"
+                android:layout_marginTop="40dp"/>
+
+            <NumberPicker
+                android:id="@+id/point_value_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/point_value_label"
+                android:layout_toRightOf="@id/point_value_label"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:id="@+id/point_value_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POINT VALUE: "
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/category_label"
+                android:layout_marginTop="40dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DeadlineInfo">
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="-60dp"
+                android:layout_marginTop="-60dp"
+                android:scaleX=".6"
+                android:scaleY=".6"
+                android:onClick="onClickTime"/>
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/timePicker"
+                android:layout_alignTop="@id/timePicker"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="-80dp"
+                android:layout_marginRight="-50dp"
+                android:scaleX=".7"
+                android:scaleY=".7"
+                android:onClick="onClickDate"/>
+            <SeekBar
+                android:id="@+id/deadlineHardnessPicker"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:max="4"
+                android:progress="2"
+                android:layout_below="@id/datePicker"
+                android:layout_marginTop="-60dp"
+                android:scaleX=".8"
+                android:scaleY=".8"
+                android:onClick="onClickHardness"/>
+        </RelativeLayout>
+    </ViewFlipper>
+
+
+
+
+</RelativeLayout>
+

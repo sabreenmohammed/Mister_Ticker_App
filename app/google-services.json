@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "71403062014",
+    "firebase_url": "https://stopwatchtask.firebaseio.com",
+    "project_id": "stopwatchtask",
+    "storage_bucket": "stopwatchtask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71403062014:android:cdb2b8b7e5c9a3c5",
+        "android_client_info": {
+          "package_name": "com.example.sabre.stopwatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71403062014-hbe9tq7focdgbfj56la02vjj4nbt5tnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD556EUxhgBNO0Juw2CDYgW9xJX5Ayy578"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
