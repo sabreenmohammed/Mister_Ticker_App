@@ -1,0 +1,56 @@
+const Alexa = require('alexa-sdk');
+const AWS = require('aws-sdk');
+
+var finalMessage = function(taskName, requestType){
+    return {
+            "default" : "default",
+            "GCM": "{ \"data\": { \"taskName\": \"" + taskName +"\", \"requestType\": \"" + requestType + "\"} }"
+        };
+};
+
+var sendMessageToApp = function(requestType, alexaObject){
+        console.log("THIS IS THE THIS OBJECT!!!"+ alexaObject.event);
+        var intentObj = alexaObject.event.request.intent;
+        var taskName = intentObj.slots.TaskName.value;
+        var sns = new AWS.SNS();
+        
+        var params = {
+            MessageStructure: "json",
+            Message: JSON.stringify(finalMessage(taskName, requestType)),
+            Subject: "Test SNS From Lambda",
+            TopicArn: "arn:aws:sns:us-east-1:449600645648:StopwatchBroadcastTopic"
+        };
+
+        sns.publish(params, alexaObject.context.done);
+        return taskName;
+};
+
+const handlers = {
+    
+    'StartTickerIntent': function () {
+        this.emit(":tell", "Mister Ticker has started the ticker for " + sendMessageToApp("start", this));
+    },
+    
+    'PauseTickerIntent': function () {
+        this.emit(":tell", "Mister Ticker has paused the ticker for " + sendMessageToApp("pause", this));
+    },
+    
+    'ResumeTickerIntent': function () {
+        this.emit(":tell", "Mister Ticker has resumed the ticker for " + sendMessageToApp("resume", this));
+    },
+    
+    'StopTickerIntent': function () {
+        this.emit(":tell", "Mister Ticker has ended the ticker for " + sendMessageToApp("end", this));
+    }, 
+    
+    'DiscardTickerIntent': function () {
+        this.emit(":tell", "Mister Ticker has discarded the task, " + sendMessageToApp("discard", this));
+    },
+    
+};
+
+exports.handler = (event, context, callback) => {
+    var alexa = Alexa.handler(event, context, callback);
+    alexa.registerHandlers(handlers);
+    alexa.execute();
+};
